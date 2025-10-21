@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧮 Student Exercises (C# Console Application)
 
 This project is a simple **C# Console Application** that demonstrates how to work with objects, collections, and LINQ queries.
@@ -18,3 +19,6 @@ The project covers key programming concepts:
 - Framework: **.NET (Console Application)**
 - Features: **LINQ**, **Lists**, **Classes**, **Filtering**, **Sorting**
 
+=======
+# LINQ_StudentTasks
+>>>>>>> origin/main
