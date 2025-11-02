@@ -2,6 +2,28 @@
 {
     internal class Program
     {
+        static List<Student> GetStudentsAbove(List<Student> students, int minScore)
+        {
+            return students
+                .Where(s => s.Score > minScore)
+                .OrderByDescending(s => s.Score)
+                .ToList();
+        }
+        static void PrintStudents(List<Student> students, string title)
+        {
+          
+
+            if (students.Count == 0)
+            {
+                Console.WriteLine("No students found");
+                return;
+            }
+
+            Console.WriteLine(title);
+            foreach (var s in students)
+                Console.WriteLine($"{s.Name} - {s.Score}");
+        }
+
         static void Main(string[] args)
         {
             List<Student> students = new List<Student>()
@@ -22,14 +44,9 @@
 
             };
 
-            var studentAbove70 = students.FindAll(s => s.Score > 70).OrderByDescending(s => s.Score);
+            var above70 = GetStudentsAbove(students, 70);
+            PrintStudents(above70, "Students with score > 70:");
 
-            Console.WriteLine("the student above 70 score \n");
-            foreach (var item in studentAbove70)
-            {
-                Console.WriteLine($"Student Name:{item.Name}, Score:{item.Score}");
-
-            }
             var studentGategory = students.GroupBy(s => s.Score >= 60 ? "Passed" : "Failed");
             Console.WriteLine("\nStudent Categories:");
 
